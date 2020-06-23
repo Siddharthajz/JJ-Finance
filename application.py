@@ -16,11 +16,13 @@ crsr=mydb.cursor()
 
 @app.route("/")
 def home():
+    """ Home page """
     return render_template("home.html")
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     """ Sign user up """
+    
     # forget any user_id
     session.clear()
 
@@ -50,8 +52,16 @@ def signup():
         # hash password
         hashpass = generate_password_hash(request.form.get("password"))
 
+        # enter username in database
+        crsr.execute("INSERT INTO users (username, password) VALUES ({}, {})".format(request.form.get("username"), hashpass))
+        mydb.commit()
+
+        # query database for username
+        crsr.execute("SELECT id FROM users WHERE username = {}".format(request.form.get("username")))
+        rows = crsr.fetchall()
+
         # remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = rows[0][0]
 
         # redirect user to home page
         return redirect("/")

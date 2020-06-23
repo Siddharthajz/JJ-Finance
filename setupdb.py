@@ -5,6 +5,7 @@ crsr=mydb.cursor()
 
 crsr.execute("Drop table Portfolio")
 crsr.execute("Drop table History")
+crsr.execute("Drop table Watchlist")
 crsr.execute("Drop table Users")
 
 crsr.execute("Create table Users \
@@ -28,6 +29,12 @@ Symbol varchar(94) not null, \
 Number_of_Shares int(10) not null, \
 Price int(11) not null, \
 Time TIMESTAMP NOT NULL, \
+UserId int(10) not null, \
+foreign key(UserId) references Users(Id))")
+
+crsr.execute("Create table WatchList( \
+Id int(10) primary key not null auto_increment, \
+Symbol varchar(94) not null, \
 UserId int(10) not null, \
 foreign key(UserId) references Users(Id))")
 

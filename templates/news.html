@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link href="static\news.css" rel="stylesheet">
+    </head>
+    
+<body style="background-color:grey;">
+
+
+{% if dict_news %}
+
+    {% for single_news in dict_news %}
+    
+       <a href = {{dict_news[single_news]}} target="_blank" > <li> {{single_news}} </li></a>
+   
+        
+    {% endfor %}
+
+{% endif %}
+
+
+</body>
+
+</html>

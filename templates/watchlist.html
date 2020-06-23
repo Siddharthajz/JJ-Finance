@@ -4,4 +4,45 @@
 
 {% block main %}
 
+<div class ="quote mt-3 mr-1">
+    <div class="quoteSearch">
+        <h2 type="text"></h2>
+        <form action="/portal" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control bg-dark text-light" name="Quote" placeholder="Enter Stock Symbol" type="text"/>
+            </div>
+            <div style="text-align:center">
+            <button class="btn btn-success text-center" type="Submit">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <table class="table table-striped table-dark mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">High</th>
+                    <th scope="col">Low</th>
+                    <th scope="col">Open</th>
+                    <th scope="col">Close</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">Adjusted Close</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ symbol }}</th>
+                    <td>{{ symbolDict['High']|round(4, 'common') }}</td>
+                    <td>{{ symbolDict['Low']|round(4, 'common') }}</td>
+                    <td>{{ symbolDict['Open']|round(4, 'common') }}</td>
+                    <td>{{ symbolDict['Close']|round(4, 'common') }}</td>
+                    <td>{{ symbolDict['Volume'] }}</td>
+                    <td>{{ symbolDict['Adj Close']|round(4, 'common') }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 {% endblock %}

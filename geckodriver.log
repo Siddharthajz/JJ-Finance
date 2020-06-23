@@ -1,0 +1,235 @@
+1592806329028	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofilee1Qms4"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592806331959	Marionette	INFO	Listening on port 56913
+1592806332142	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: this.browser.driver.dialogObserver is null
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: this.browser.driver.dialogObserver is null
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1592806627195	Marionette	INFO	Stopped listening on port 56913
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ssion
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: javascript: (function(){document.open();document.domain="oao-js-tag.onemobile.yahoo.com";document.write('%3Chtml%3E%3Chead%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3E(function()%7Btry%7Bwindow.%24dv%3Dwindow.%24dvbs%7C%7Cparent.%24dvbs%2Cwindow.%24dv.dvObjType%3D%22dvbs%22%7Dcatch(f)%7B%7D%7D)()%3B%3C%2Fscript%3E%3C%2Fhead%3E%3Cbody%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3E(function(a)%7Bwindow.%24frmId%3DMath.random().toString(36)%2BMath.random().toString(36)%3Bfor(var%20b%3D%5B%7Bsrc%3A%22dv-match%22%2Cmain%3A6%7D%5D%2Cd%3D0%3Bd%3Cb.length%3Bd%2B%2B)%7Bvar%20f%3Db%5Bd%5D%2Ce%3Df.eval%26%26f.rate%26%26100*Math.random()%3Cf.rate%3Ff.eval%3Af.main%2Cg%3Ddocument.createElement(%22script%22)%3Bg.src%3D%22%2F%2F%22%2Ba%2B%22%2F%22%2Bf.src%2Be%2B%22.js%22%3Bg.async%3D!0%3Bdocument.body.appendChild(g)%7D%7D)(%22cdn.doubleverify.com%22)%3B%3C%2Fscript%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3EsetTimeout(function()%20%7Bdocument.close()%3B%7D%2C%200)%3B%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E');})(), line 1: SecurityError: The operation is insecure.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1592806528557	Marionette	INFO	Stopped listening on port 57337
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+odules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592806442520	Marionette	INFO	Listening on port 57727
+1592806442903	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: uncaught exception: [object Object]
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 180: Error: permitUnload is already running for this tab.
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 314: TypeError: state is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1592806626082	Marionette	INFO	Stopped listening on port 57727
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: TypeError: ServiceWorker script at https://in.finance.yahoo.com/_service-worker.js for scope https://in.finance.yahoo.com/ encountered an error during installation.
+[Child 17852, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+1592806524354	Marionette	INFO	Stopped listening on port 58056
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1592806529507	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofileSaNy5b"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592806536128	Marionette	INFO	Listening on port 58233
+1592806536513	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: uncaught exception: [object Object]
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 180: Error: permitUnload is already running for this tab.
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 314: TypeError: state is undefined
+1592806625942	Marionette	INFO	Stopped listening on port 58233
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+n.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+1592806585781	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofileDcUY4d"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592806594343	Marionette	INFO	Listening on port 58753
+1592806594509	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+[Child 22136, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+[Child 22136, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 522
+1592806818634	Marionette	INFO	Stopped listening on port 58753
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+in.finance.yahoo.com/ encountered an error during installation.
+1592806625885	Marionette	INFO	Stopped listening on port 58460
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1592806800976	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofileI7WnnG"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592806803444	Marionette	INFO	Listening on port 59113
+1592806803591	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: javascript: (function(){document.open();document.domain="oao-js-tag.onemobile.yahoo.com";document.write('%3Chtml%3E%3Chead%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3E(function()%7Btry%7Bwindow.%24dv%3Dwindow.%24dvbs%7C%7Cparent.%24dvbs%2Cwindow.%24dv.dvObjType%3D%22dvbs%22%7Dcatch(f)%7B%7D%7D)()%3B%3C%2Fscript%3E%3C%2Fhead%3E%3Cbody%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3E(function(a)%7Bwindow.%24frmId%3DMath.random().toString(36)%2BMath.random().toString(36)%3Bfor(var%20b%3D%5B%7Bsrc%3A%22dv-match%22%2Cmain%3A6%7D%5D%2Cd%3D0%3Bd%3Cb.length%3Bd%2B%2B)%7Bvar%20f%3Db%5Bd%5D%2Ce%3Df.eval%26%26f.rate%26%26100*Math.random()%3Cf.rate%3Ff.eval%3Af.main%2Cg%3Ddocument.createElement(%22script%22)%3Bg.src%3D%22%2F%2F%22%2Ba%2B%22%2F%22%2Bf.src%2Be%2B%22.js%22%3Bg.async%3D!0%3Bdocument.body.appendChild(g)%7D%7D)(%22cdn.doubleverify.com%22)%3B%3C%2Fscript%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3EsetTimeout(function()%20%7Bdocument.close()%3B%7D%2C%200)%3B%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E');})(), line 1: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+1592806995397	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofile5fx8Cc"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592806998130	Marionette	INFO	Listening on port 59442
+1592806998514	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+1592807161564	Marionette	INFO	Stopped listening on port 59442
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: , line 0: TypeError: ServiceWorker script at https://in.finance.yahoo.com/_service-worker.js for scope https://in.finance.yahoo.com/ encountered an error during installation.
+1592807163506	Marionette	INFO	Stopped listening on port 59802
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1592807171924	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofile6DRSLY"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592807175209	Marionette	INFO	Listening on port 60023
+1592807175546	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0001,name=PCookieService::Msg_SetCookies) Closed channel: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x6A0029,name=PNecko::Msg_RemoveRequestContext) Closed channel: cannot send/recv
+
+JavaScript error: resource:///actors/AboutReaderChild.jsm, line 95: NS_ERROR_UNEXPECTED: 
+1592807852741	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofileyIK2Ap"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592807855228	Marionette	INFO	Listening on port 50139
+1592807855393	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 91: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+1592807878425	Marionette	INFO	Stopped listening on port 50139
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1592808037419	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofile5tfJ27"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592808039616	Marionette	INFO	Listening on port 50400
+1592808040063	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+1592808398831	Marionette	INFO	Stopped listening on port 50400
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1592808426433	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Sid\\AppData\\Local\\Temp\\rust_mozprofilePX7wTe"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592808428678	Marionette	INFO	Listening on port 50816
+1592808429072	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://in.finance.yahoo.com/, line 90: SyntaxError: "" literal not terminated before end of script
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://s.yimg.com/uc/finance/dd-site/js/vendor.65d2002a56808433dcee.modern.js, line 2: HttpError: Attempting to prefetch a non-content url
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+JavaScript error: https://eus.rubiconproject.com/usync.html?&geo=au&co=in, line 12: SecurityError: The operation is insecure.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1592817069929	Marionette	INFO	Stopped listening on port 50816
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

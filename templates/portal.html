@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/ticker.css">
+
+<link rel="stylesheet" type="text/css" href="/static/portal.css">
+
+<!-- <link href="/static/quote.css" rel="stylesheet"> -->
+{% endblock %}
+
+{% block title %}Portal{% endblock %}
+
+{% block main %}
+
+<!-- THE TICKER TAPE - SCROLLER -->
+
+<div class="tcontainer mt-2"><div class="ticker-wrap bg-dark text-light"><div class="ticker-move">
+    <div class="ticker-item">JJ FINANCE</div>
+    <div class="ticker-item">JJ FINANCE</div>
+    <div class="ticker-item">JJ FINANCE</div>    
+    <div class="ticker-item">JJ FINANCE</div>
+</div></div></div>
+
+
+<!-- QUOTE DIV -->
+
+<div class ="quote mt-3 mr-1">
+    <div class="quoteSearch">
+        <h2 type="text"></h2>
+        <form action="/portal" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control bg-dark text-light" name="Quote" placeholder="Enter Stock Symbol" type="text"/>
+            </div>
+            <div style="text-align:center">
+            <button class="btn btn-success text-center" type="Submit">Find</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div>
+    {% if symbolDict %}
+
+    <table class="table table-striped table-dark mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">High</th>
+            <th scope="col">Low</th>
+            <th scope="col">Open</th>
+            <th scope="col">Close</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Adjusted Close</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ symbol }}</th>
+            <td>{{ symbolDict['High']|round(4, 'common') }}</td>
+            <td>{{ symbolDict['Low']|round(4, 'common') }}</td>
+            <td>{{ symbolDict['Open']|round(4, 'common') }}</td>
+            <td>{{ symbolDict['Close']|round(4, 'common') }}</td>
+            <td>{{ symbolDict['Volume'] }}</td>
+            <td>{{ symbolDict['Adj Close']|round(4, 'common') }}</td>
+          </tr>
+        </tbody>
+    </table>
+
+    <div class = "graph">  
+      
+      {% include "stockgraph.html" %}
+
+    </div>
+
+    {% endif %}
+    </div>
+</div>
+
+
+
+
+<!-- FOR NEWS -->
+
+<div class ="news mt-3">
+    <iframe src = "{{ url_for('news') }}" ></iframe>
+</div>
+
+
+
+
+<!-- FOR CURRENCY CONVERTER -->
+
+<div class ="currency mt-3">
+    <iframe src = "{{ url_for('currency') }}" ></iframe>
+</div>
+
+{% endblock %}

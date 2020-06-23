@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block css %}
+  <link href="static\imgbtnStylesheet.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block main %}
+<br>
+<div class="container">
+  <img src="/static/stock-market-image-getty.jpg" class="rounded" alt="..." >
+  <button class="btn">Get Started</button>
+</div>
+
+<br>
+  <div class="jumbotron">
+    <h1 class="display-4">About Us</h1>
+    <p class="lead text-left"><br>JJ Finance is a web app through which you can look up stocks. You can also use it as a virtual stock market learning app by logging in. In the look up stocks we will be showcasing multiple real time values. This includes a graph, important news, finding share price, currency converter and scrolling values of share. Before people dive into real life stock trading. Our app will provide them a practicing ground by allowing them to buy share, look at their history as well as portfolio.</p>
+    <hr class="my-4 bg-light">
+    <p class = "text-left">It has been developed and created by Siddhartha Jaiswal and Aryan Jain</p>
+  </div>
+
+  <div class="card text-center bg-dark">
+    <div class="card-body">
+        
+      <p class="card-text text-light">Home &ensp; | &ensp; Portal &ensp; | &ensp; Watchlist &ensp; | &ensp; Practice</p>
+      
+    <hr class="my-3 bg-secondary">
+    
+    <p class="text-light">Contact Us</p>
+        <p class="card-text text-light">Email: aryanjain.1710@gmail.com and j.siddhartha2003@gmail.com</p>  
+        
+    <hr class="my-3 bg-secondary">
+
+    <p class="text-light">Designed and developed by Aryan Jain and Siddhartha Jaiswal</p>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -167,27 +167,28 @@ def portal():
 
         symbol = request.form.get("Quote")
 
-        #if Quote does not exist
-        
-
         # getting latest data in case market is closed (for whatever reason)
         today = datetime.date.today()
         date = today
         strdate = datetime.date.today().strftime("%d-%m-%Y")
 
-        while True:    
+        while True:
             try:
                 df = get_ohlcv(symbol, strdate)
             except KeyError:
                 date = date - datetime.timedelta(days=1)
                 strdate = date.strftime("%d-%m-%Y")
                 continue
+            # if incorrect symbol given
+            except:
+                flash(u"Please enter valid symbol","error")
+                return render_template("portal.html")
             break
             
         symbolDict = df.to_dict('records')[0]
 
         # creating a html page with a graph
-        startdate = '01-01-2002' 
+        startdate = '01-01-2002'
         plot_data(symbol, startdate)
         
         return render_template("portal.html", symbolDict = symbolDict, symbol = symbol)      

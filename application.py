@@ -3,12 +3,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import mysql.connector
 import datetime
 
-from helpers import plot_data, get_ohlcv
-from news import get_links, get_titles
-
-#GET - when link is pressed or button or anything is pressed
-#POST - when you commit some information to that website
-
+from helpers import plot_data, get_ohlcv, login_required
+from news import get_news
 
 # Configure application
 app = Flask(__name__)
@@ -198,14 +194,51 @@ def portal():
         return render_template("portal.html")
     
 
-@app.route("/watchlist", methods=['GET', 'POST'])
+@app.route("/watchlist", methods=['GET','POST'])
+@login_required
 def watchlist():
-    return render_template("watchlist.html")
+    # if user reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        
+        # if Quote was not submitted
+        if not request.form.get("Quote"):
+            flash(u"Must provide symbol","error")
+            return render_template("portal.html")
+
+        symbol = request.form.get("Quote")
+
+        # getting latest data in case market is closed (for whatever reason)
+        today = datetime.date.today()
+        date = today
+        strdate = datetime.date.today().strftime("%d-%m-%Y")
+
+        while True:
+            try:
+                df = get_ohlcv(symbol, strdate)
+            except KeyError:
+                date = date - datetime.timedelta(days=1)
+                strdate = date.strftime("%d-%m-%Y")
+                continue
+            # if incorrect symbol given
+            except:
+                flash(u"Please enter valid symbol","error")
+                return render_template("portal.html")
+            break
+            
+        symbolDict = df.to_dict('records')[0]
+
+        return render_template("watchlist.html", symbolDict=symbolDict, symbol=symbol)
+    
+    # else if user reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("watchlist.html")
 
 
 @app.route("/news")
 def news():
-    return render_template('news.html')
+    dict_news = get_news()
+
+    return render_template('news.html', dict_news = dict_news)
 
     
 @app.route("/currency")

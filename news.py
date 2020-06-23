@@ -12,12 +12,25 @@ job_elems = results.find_all('li', class_='js-stream-content')
 
 links = []
 titles = []
+
 for p_job in job_elems:
     links.append(URL + p_job.find('a')['href'])
     titles.append(p_job.find('a').text)
-    
-def get_links():
-    return links
 
-def get_titles():
-    return titles
+
+links = links[1:]
+titles = titles[1:]
+
+newslist = {}
+
+for x in range(len(links)):
+
+    newslist[titles[x]] = links[x] 
+
+
+
+
+def get_news():
+
+    return newslist
+

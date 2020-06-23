@@ -38,7 +38,10 @@ def get_ohlcv(symbol,start,end='today'):
 
     symbol = str(symbol)+'.NS'
     startdate = datetime.datetime.strptime(start,'%d-%m-%Y')
-    enddate = datetime.datetime.today() if end=='today' else datetime.datetime.strptime(end,'%d-%m-%y')
+    if end=='today':
+        enddate = datetime.datetime.today()  
+    else:
+        enddate = datetime.datetime.strptime(end,'%d-%m-%y')
     data = pandas_datareader.get_data_yahoo(symbol,startdate,enddate)
     return data
 

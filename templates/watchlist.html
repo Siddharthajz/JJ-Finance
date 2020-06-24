@@ -4,15 +4,15 @@
 
 {% block main %}
 
-<div class ="quote mt-3 mr-1">
+<div class ="quote mt-5 mr-1">
     <div class="quoteSearch">
         <h2 type="text"></h2>
-        <form action="/portal" method="post">
+        <form action="/watchlist" method="post">
             <div class="form-group">
                 <input autocomplete="off" autofocus class="form-control bg-dark text-light" name="Quote" placeholder="Enter Stock Symbol" type="text"/>
             </div>
             <div style="text-align:center">
-            <button class="btn btn-success text-center" type="Submit">Add</button>
+            <button class="btn btn-success text-center mb-4" type="Submit">Add</button>
             </div>
         </form>
     </div>
@@ -31,15 +31,17 @@
                 </tr>
             </thead>
             <tbody>
+                {% for i in range(symbolDictList|length) %}
                 <tr>
-                    <th scope="row">{{ symbol }}</th>
-                    <td>{{ symbolDict['High']|round(4, 'common') }}</td>
-                    <td>{{ symbolDict['Low']|round(4, 'common') }}</td>
-                    <td>{{ symbolDict['Open']|round(4, 'common') }}</td>
-                    <td>{{ symbolDict['Close']|round(4, 'common') }}</td>
-                    <td>{{ symbolDict['Volume'] }}</td>
-                    <td>{{ symbolDict['Adj Close']|round(4, 'common') }}</td>
+                    <th scope="row">{{ symbolList[i] }}</th>
+                    <td>{{ symbolDictList[i]['High']|round(4, 'common') }}</td>
+                    <td>{{ symbolDictList[i]['Low']|round(4, 'common') }}</td>
+                    <td>{{ symbolDictList[i]['Open']|round(4, 'common') }}</td>
+                    <td>{{ symbolDictList[i]['Close']|round(4, 'common') }}</td>
+                    <td>{{ symbolDictList[i]['Volume'] }}</td>
+                    <td>{{ symbolDictList[i]['Adj Close']|round(4, 'common') }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

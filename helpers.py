@@ -77,3 +77,7 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+def inr(value):
+    """Format value as INR."""
+    return f"₹{value:,.2f}"

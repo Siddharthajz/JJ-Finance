@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Practice - Buy{% endblock %}
+
+
+{% block css %}
+
+<link rel="stylesheet" type="text/css" href="/static/buy.css">
+
+{% endblock %}
+
+
+{% block main %}
+
+<!-- Selecting Quote -->
+
+<div class ="quote mt-3 mr-1">
+    <div class="quoteSearch">
+        <h2 type="text"></h2>
+        <form action="/buy" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control bg-dark text-light" name="Quote" placeholder="Enter Stock Symbol" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control bg-dark text-light" name="Number" placeholder="Enter Number of Shares" type="integer"/>
+            </div>
+            <div style="text-align:center">
+            <button class="btn btn-success text-center" type="Submit">Buy</button>
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}

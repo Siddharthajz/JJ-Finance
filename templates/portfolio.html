@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Practice - Portfolio{% endblock %}
+
+{% block main %}
+<table class="table table-striped table-dark mt-5">
+    <tr>
+      <th>  Symbol  </th>
+      <th>  Shares  </th>
+      <th>  Current Price  </th>
+      <th>  Gain/Loss  </th>
+      <th>  TOTAL  </th>
+    </tr>
+    {% for i in range(rows|length) %}
+    <tr>
+      <td>{{ rows[i][0] }}</td>
+      <td>{{ rows[i][1] }}</td>
+      <td>₹{{ '%0.2f' % priceList[i] }}</td>
+      <td>₹{{ '%0.2f' % ((priceList[i] * rows[i][1]) - costList[i]) }}</td>
+      <td>₹{{ '%0.2f' % (priceList[i] * rows[i][1]) }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>CASH</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{{ cash }}</td>
+    </tr>
+    <tr>
+      <td colspan="4"></td>
+      <td><b>{{ grandtotal }}</b></td>
+    </tr>
+  </table>
+{% endblock %}

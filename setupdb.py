@@ -16,19 +16,17 @@ Cash int(11) DEFAULT '600000')")
 
 crsr.execute("Create table Portfolio \
 (Id int(10) primary key not null auto_increment, \
-Name varchar(94) not null, \
 Symbol varchar(94) not null, \
-Number_of_Shares int not null, \
+Shares int not null, \
 UserId int(10) not null, \
 foreign key(UserId) references Users(Id))")
 
 crsr.execute("Create table History( \
 Id int(10) primary key not null auto_increment, \
-Name varchar(94) not null, \
 Symbol varchar(94) not null, \
-Number_of_Shares int(10) not null, \
+Shares int(10) not null, \
 Price int(11) not null, \
-Time TIMESTAMP NOT NULL, \
+Date_Time TIMESTAMP NOT NULL, \
 UserId int(10) not null, \
 foreign key(UserId) references Users(Id))")
 
@@ -39,3 +37,19 @@ UserId int(10) not null, \
 foreign key(UserId) references Users(Id))")
 
 mydb.close()
+
+
+
+
+''' 
+Portfolio
+    symbol
+    number of shares
+    current value of 1 stock
+    how much money paid when stocks bought
+    gain/loss [(numberofshares X current value of 1 stock)-{(how much money paid)]<- this we get from history table}
+    total value (numberofshares X current value of 1 stock)
+
+HISTORY
+    
+'''

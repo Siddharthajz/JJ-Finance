@@ -24,7 +24,7 @@
 
 <!-- QUOTE DIV -->
 
-<div class ="quote mt-3 mr-1">
+<div class ="quote mt-3 ">
     <div class="quoteSearch">
         <h2 type="text"></h2>
         <form action="/portal" method="post">
@@ -40,7 +40,6 @@
 
     <div>
     {% if symbolDict %}
-
     <table class="table table-striped table-dark mt-3">
         <thead>
           <tr>
@@ -56,7 +55,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">{{ symbol }}</th>
+            <th scope="row">{{ symbol.upper() }}</th>
             <td>{{ symbolDict['High']|round(4, 'common') }}</td>
             <td>{{ symbolDict['Low']|round(4, 'common') }}</td>
             <td>{{ symbolDict['Open']|round(4, 'common') }}</td>
@@ -77,22 +76,10 @@
     </div>
 </div>
 
-
-
-
 <!-- FOR NEWS -->
 
 <div class ="news mt-3">
     <iframe src = "{{ url_for('news') }}" ></iframe>
-</div>
-
-
-
-
-<!-- FOR CURRENCY CONVERTER -->
-
-<div class ="currency mt-3">
-    <iframe src = "{{ url_for('currency') }}" ></iframe>
 </div>
 
 {% endblock %}

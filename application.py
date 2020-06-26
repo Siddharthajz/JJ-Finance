@@ -161,7 +161,7 @@ def portal():
             flash(u"Must provide symbol","error")
             return render_template("portal.html")
 
-        symbol = request.form.get("Quote")
+        symbol = request.form.get("Quote").upper()
 
         # getting latest data in case market is closed (for whatever reason)
         today = datetime.date.today()
@@ -225,8 +225,15 @@ def watchlist():
                 return redirect("/watchlist")
             break
         
+        crsr.execute("SELECT symbol FROM watchlist WHERE symbol = '{}' and userid = {}".format(symbol.upper(), session["user_id"]))
+        rows = crsr.fetchall()
+        print(rows)
+        if rows:
+            flash(u"You already have this stock in your watchlist","error")
+            return redirect("/watchlist")
+
         # inserting new symbol into the watchlist
-        crsr.execute("INSERT INTO watchlist (symbol, userid) VALUES ('{}', {})".format(symbol, session["user_id"]))
+        crsr.execute("INSERT INTO watchlist (symbol, userid) VALUES ('{}', {})".format(symbol.upper(), session["user_id"]))
         mydb.commit()
 
         # getting all symbols from the watchlist table
@@ -282,11 +289,6 @@ def news():
     dict_news = get_news()
 
     return render_template('news.html', dict_news = dict_news)
-
-    
-@app.route("/currency")
-def currency():
-    return render_template('currency.html')
     
 
 @app.route("/buy", methods=['GET', 'POST'])
@@ -307,7 +309,7 @@ def buy():
             return render_template("buy.html")
 
         
-        symbol = request.form.get("Quote")
+        symbol = request.form.get("Quote").upper()
         shares = eval(request.form.get("Number"))
 
         #if not an integer in shares
@@ -338,6 +340,24 @@ def buy():
         symbolDict = df.to_dict('records')[0]
 
 
+        
+        
+        # Check if user has enough cash to spend on transaction
+
+        crsr.execute("Select cash from users where Id = {}".format(session["user_id"]))
+        cash = crsr.fetchall()
+
+        cash_inhand = []
+
+        for i in cash:
+            for j in i:
+                cash_inhand.append(j)
+
+        if float(shares*symbolDict["Close"]) > cash_inhand[0]:
+            flash(u"Not enough cash in hand","error")
+            return render_template("sell.html")
+
+        
         #Inserting data in history table
         crsr.execute("INSERT INTO history (Symbol, Shares, Price, Date_Time, UserId) VALUES ('{}',{}, {}, '{}', {})".format(symbol, shares, symbolDict["Close"], datetime.datetime.now(), session["user_id"] ))
         mydb.commit()
@@ -363,13 +383,13 @@ def buy():
             mydb.commit()
 
         #Decrease Cash
-        totalprice = shares*int(symbolDict["Close"])
+        totalprice = shares * float('%.3f'%symbolDict["Close"])
         print(totalprice)
 
         crsr.execute("Update Users Set Cash = Cash - {} where Id = {}".format(totalprice, session['user_id']))
         mydb.commit()
         
-
+        flash(u"You have bought "+ str(shares) +" shares of "+symbol,"Information")
         return render_template("buy.html", symbolDict = symbolDict, symbol = symbol, shares = shares)
 
     # else if user reached route via GET (as by clicking a link or via redirect)
@@ -394,7 +414,7 @@ def sell():
             return render_template("sell.html")
 
         
-        symbol = request.form.get("Quote")
+        symbol = request.form.get("Quote").upper()
         shares = - eval(request.form.get("Number"))
 
         #if not an integer in shares
@@ -402,14 +422,29 @@ def sell():
             flash(u"Must provide a number","error")
             return render_template("sell.html")
 
-        #if shares are not there
-        crsr.execute("Select shares from portfolio where symbol = '{}' and userId = {}",format(symbol, session["user_id"]))
+        # If user does not have the stock in his portfolio
+        crsr.execute("Select symbol from portfolio where userid = {}".format(session["user_id"]))
+        symbol_list = crsr.fetchall()
+
+        list_of_symbols = []
+
+        for i in symbol_list:
+            for j in i:
+                list_of_symbols.append(j)
+
+        if symbol not in list_of_symbols:
+            flash(u"You don't own the stock","error")
+            return render_template("sell.html")
+
+
+        #if shares are not there if not enough stock
+        crsr.execute("Select shares from portfolio where symbol = '{}' and userId = {}".format(symbol, session["user_id"]))
         current_shares = crsr.fetchall()
 
         shares_owned = int()
 
 
-        #if not enough stock
+        
         for i in current_shares:
             for j in i:
                 shares_owned = int(j)
@@ -418,6 +453,20 @@ def sell():
             flash(u"Not enough shares","error")
             return render_template("sell.html")
 
+        #if shares become 0
+        crsr.execute("Select shares from portfolio where symbol = '{}' and userId = {}".format(symbol, session["user_id"]))
+        shares_there = crsr.fetchall()
+
+        num_shares = []
+        
+        for i in shares_there:
+            for j in i:
+                num_shares.append(j)
+
+        if eval(request.form.get("Number")) == num_shares[0]:
+            crsr.execute("delete from portfolio where symbol = '{}' and userid = {}".format(symbol, session["user_id"]))
+            flash(u"You don't own any shares of this stock now","error")
+            return render_template("sell.html")
 
 
         # getting latest data in case market is closed (for whatever reason)
@@ -461,6 +510,14 @@ def sell():
             mydb.commit()
         
         
+        #Increase Cash
+        totalprice = shares * float('%.3f'%symbolDict["Close"])
+        print(totalprice)
+
+        crsr.execute("Update Users Set Cash = Cash + {} where Id = {}".format(totalprice, session['user_id']))
+        mydb.commit()
+        
+        flash(u"You have sold "+ str(shares) +" shares of "+symbol,"Information")
         return render_template("sell.html", symbolDict = symbolDict, symbol = symbol, shares = shares)
 
     # else if user reached route via GET (as by clicking a link or via redirect)
@@ -471,6 +528,7 @@ def sell():
 @app.route("/history")
 def history():
     """ Show transaction history """
+    
     crsr.execute("SELECT symbol, shares, price, date_time FROM history WHERE userid = {} ORDER BY date_time DESC".format(session["user_id"]))
     rows = crsr.fetchall()
 
@@ -511,7 +569,7 @@ def portfolio():
                 continue
             break
         currentPrice = df.to_dict('records')[0]['Close']
-        priceList.append(currentPrice)
+        priceList.append(float('%.3f'%(currentPrice)))
 
         pricetotal = currentPrice * row[1] + pricetotal 
 

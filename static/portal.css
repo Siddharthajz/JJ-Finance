@@ -1,45 +1,36 @@
+.quote {
+    float: left;
+    height: 530px;
+    width: 120px;   
+
+}
+
 .table {
     float: left;
-    height: 50px;
+    height: 40px;
     width: 580px;
 
 }
 
-.quote {
-    float: left;
-    height: 100px;
-    width: 320px;   
-
-}
 
 
 .graph {
 
-    float: left;
-    height: 50px;
-    width: 900px;
+    float: none;
+    height: 10px;
+    width: 950px;
 
 
 }
 
 .news {
     float: right;
-    height: 300px;
+    height: 490px;
     width: 370px;
  
 }
-
-.currency {
-    float: right;
-    height: 180px;
-    width: 370px;
-
-}
-
 
 iframe {
     width: 100%;
     height: 100%;
 }
-
-

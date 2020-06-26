@@ -3,18 +3,18 @@
         <link href="static\news.css" rel="stylesheet">
     </head>
     
-<body style="background-color:grey;">
+<body style="background-color:rgb(48, 58, 58);">
 
 
 {% if dict_news %}
-
+    <div class="tickerv-wrap">
     {% for single_news in dict_news %}
     
-       <a href = {{dict_news[single_news]}} target="_blank" > <li> {{single_news}} </li></a>
+       <a href = {{dict_news[single_news]}} target="_blank" style="color:white" ><p> {{single_news}} </p></a>
    
         
     {% endfor %}
-
+    </div>
 {% endif %}
 
 

@@ -10,8 +10,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
 
+import urllib.request
+import csv
+
 from functools import wraps
 from flask import redirect, request, session
+
+API_KEY = 'XYVLAY94HUXJCZZ4'
 
 # def get_nifty50stocks(stocklist=True):
 #     """returns a dataframe with nifty 50 stocks and stock specific industries

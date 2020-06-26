@@ -25,7 +25,7 @@ crsr.execute("Create table History( \
 Id int(10) primary key not null auto_increment, \
 Symbol varchar(94) not null, \
 Shares int(10) not null, \
-Price int(11) not null, \
+Price decimal(11,3) not null, \
 Date_Time TIMESTAMP NOT NULL, \
 UserId int(10) not null, \
 foreign key(UserId) references Users(Id))")

@@ -7,14 +7,14 @@
 
 
 {% if dict_news %}
-    <div class="tickerv-wrap">
+    <div class="tickerv-wrap"><ul>
     {% for single_news in dict_news %}
     
-       <a href = {{dict_news[single_news]}} target="_blank" style="color:white" ><p> {{single_news}} </p></a>
+        <li><a href = {{dict_news[single_news]}} target="_blank" style="color:white" ><p> {{single_news}} </p></a></li>
    
         
     {% endfor %}
-    </div>
+    </ul></div>
 {% endif %}
 
 

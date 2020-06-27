@@ -18,6 +18,8 @@ from flask import redirect, request, session
 
 API_KEY = 'XYVLAY94HUXJCZZ4'
 
+# csv file link : https://www1.nseindia.com/content/equities/EQUITY_L.csv
+
 # def get_nifty50stocks(stocklist=True):
 #     """returns a dataframe with nifty 50 stocks and stock specific industries
 #         stocklist: if True, then returns the list of stock scrips only

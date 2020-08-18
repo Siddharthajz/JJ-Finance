@@ -17,6 +17,11 @@ crsr=mydb.cursor()
 @app.route("/")
 def home():
     """ Home page """
+    """ if session["user_id"]:
+            crsr.execute("SELECT username FROM users WHERE id = '{}'".format(session["user_id"]))
+            rows = crsr.fetchall()
+            username = rows[0][0]
+    """
     return render_template("home.html")
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -150,8 +155,8 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
-@app.route("/portal", methods=['GET', 'POST'])
-def portal():
+@app.route("/quote", methods=['GET', 'POST'])
+def quote():
 
     # if user reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
@@ -159,7 +164,7 @@ def portal():
         # if Quote was not submitted
         if not request.form.get("Quote"):
             flash(u"Must provide symbol","error")
-            return render_template("portal.html")
+            return render_template("quote.html")
 
         symbol = request.form.get("Quote").upper()
 
@@ -178,7 +183,7 @@ def portal():
             # if incorrect symbol given
             except:
                 flash(u"Please enter valid symbol","error")
-                return render_template("portal.html")
+                return render_template("quote.html")
             break
             
         symbolDict = df.to_dict('records')[0]
@@ -187,11 +192,11 @@ def portal():
         startdate = '01-01-2002'
         plot_data(symbol, startdate)
         
-        return render_template("portal.html", symbolDict = symbolDict, symbol = symbol)      
+        return render_template("quote.html", symbolDict = symbolDict, symbol = symbol)      
 
     # else if user reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("portal.html")
+        return render_template("quote.html")
     
 
 @app.route("/watchlist", methods=['GET','POST'])

@@ -1,15 +1,10 @@
-a:link {
-    text-decoration: none;
-    font-family: 'Helvetica' ;
-  }
-  
 /* WRAPPER */
 .tickerv-wrap {
-  background: #eee;
   box-sizing: content-box;
   height: 100%; /* Take note of this */
   overflow: hidden; /* Hide scrollbars */
   padding: 10px;
+  
 } 
 
 /* TICKER ANIMATION */

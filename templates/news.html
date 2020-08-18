@@ -1,23 +1,30 @@
-<html>
-    <head>
-        <link href="static\news.css" rel="stylesheet">
-    </head>
-    
-<body style="background-color:rgb(48, 58, 58);">
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/ticker.css">
+
+<link href="static\news.css" rel="stylesheet">
+
+{% endblock %}
+
+{% block title %}News{% endblock %}
+
+{% block main %}
+
+
+<br>
+<h1 class="display-4 mb-5">News</h1>
 
 
 {% if dict_news %}
-    <div class="tickerv-wrap"><ul>
+    <div class="tickerv-wrap border border-bottom-0-right-0-left-0" class="rounded-pill"><ul>
     {% for single_news in dict_news %}
     
-        <li><a href = {{dict_news[single_news]}} target="_blank" style="color:white" ><p> {{single_news}} </p></a></li>
+        <li><a href = {{dict_news[single_news]}} target="_blank" style="color:black; font-family:Comic Sans MS Bold;" ></a><p> {{single_news}} </p></a></li>
    
         
     {% endfor %}
     </ul></div>
 {% endif %}
 
-
-</body>
-
-</html>
+{% endblock %}

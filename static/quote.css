@@ -1,11 +1,13 @@
-.quoteSearch{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.table {
+    margin: 0 auto;
+    height: 50px;
+    width: 1180px;
+
 }
-/* 
-.quoteSearch button{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
+
+.graph {
+    margin: 0 auto;
+    width: 1000px;
+
+
+}

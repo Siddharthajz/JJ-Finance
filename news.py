@@ -1,37 +1,49 @@
 import requests
+import datetime 
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+import bs4 
 from bs4 import BeautifulSoup
+import re
+import codecs
 
-URL = 'https://in.finance.yahoo.com/'
-page = requests.get(URL)
+def requests_retry_session(retries=5,backoff_factor=0.3,status_forcelist=(500, 502, 504),session=None,):
+    """
+        Used instead of requests, this function tries to get to the url a number of times with a time lag.
+        retries:          The maximum number of retries after the first failed attempt. default retries are 5
+        backoff_factor:   Time waited before retires, waits by factor*2 seconds. default wait after first 0.6 secconds
+        status_forcelist: The errors for which a retry is enforced
+    """
+    session = session or requests.Session()
+    retry = Retry(total=retries,read=retries,connect=retries,backoff_factor=backoff_factor,status_forcelist=status_forcelist,)
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    return session
 
-soup = BeautifulSoup(page.content, 'html.parser')
+url = 'https://in.finance.yahoo.com/'
+header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'}
+r = requests_retry_session().get(url,headers=header).content
+soup = BeautifulSoup(r,'html.parser')
 
-results = soup.find(class_='My(0) Ov(h) P(0) Wow(bw)')
-
-job_elems = results.find_all('li', class_='js-stream-content Pos(r)')
-
-links = []
-titles = []
-
-for p_job in job_elems:
-    print("#############",p_job)
-    links.append(URL + p_job.find('a')['href'])
-    titles.append(p_job.find('a').text)
-
-
-links = links[1:]
-titles = titles[1:]
-
-newslist = {}
-
-for x in range(len(links)):
-
-    newslist[titles[x]] = links[x] 
+script = soup.find("script",text=re.compile("root.App.main"))
+script = str(script)
 
 
+summary_list = []
+summaries = re.finditer('"is_eligible":',script)
+summary_positions = [summary.start() for summary in summaries]
+for i in summary_positions:
+    link = script[script.index('"url"',i)+7:script.index('"property"',i)-2]
+    title = script[script.index('"title"',i)+9:script.index('"',script.index('"title"',i)+9)]
+    summary_list.append([codecs.decode(link, 'unicode-escape'),title])
+
+final_list = [i for i in summary_list if ('summary' not in i[0])]
+
+print(final_list)
 
 
 def get_news():
 
-    return newslist
+    return final_list
 

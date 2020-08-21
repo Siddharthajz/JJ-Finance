@@ -291,9 +291,9 @@ def watchlist():
 
 @app.route("/news")
 def news():
-    dict_news = get_news()
+    news_list = get_news()
 
-    return render_template('news.html', dict_news = dict_news)
+    return render_template('news.html', news_list = news_list)
     
 
 @app.route("/buy", methods=['GET', 'POST'])

@@ -17,11 +17,7 @@ crsr=mydb.cursor()
 @app.route("/")
 def home():
     """ Home page """
-    """ if session["user_id"]:
-            crsr.execute("SELECT username FROM users WHERE id = '{}'".format(session["user_id"]))
-            rows = crsr.fetchall()
-            username = rows[0][0]
-    """
+    
     return render_template("home.html")
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -67,7 +63,7 @@ def signup():
             flash(u"Username already exists","error")
             return render_template("signup.html")
 
-            
+
         # hash password
         hashpass = generate_password_hash(request.form.get("password"))
 
@@ -232,7 +228,6 @@ def watchlist():
         
         crsr.execute("SELECT symbol FROM watchlist WHERE symbol = '{}' and userid = {}".format(symbol.upper(), session["user_id"]))
         rows = crsr.fetchall()
-        print(rows)
         if rows:
             flash(u"You already have this stock in your watchlist","error")
             return redirect("/watchlist")
@@ -376,8 +371,6 @@ def buy():
             for j in i:
                 existing_symbols.append(j)
 
-        print(existing_symbols)
-
         if symbol in existing_symbols:
             crsr.execute("Update Portfolio set shares = shares + {} where userId = {} and symbol = '{}'".format(shares, session['user_id'], symbol))
             mydb.commit()
@@ -389,7 +382,6 @@ def buy():
 
         #Decrease Cash
         totalprice = shares * float('%.3f'%symbolDict["Close"])
-        print(totalprice)
 
         crsr.execute("Update Users Set Cash = Cash - {} where Id = {}".format(totalprice, session['user_id']))
         mydb.commit()
@@ -508,8 +500,7 @@ def sell():
             for j in i:
                 existing_symbols.append(j)
 
-        print(existing_symbols)
-
+        
         if symbol in existing_symbols:
             crsr.execute("Update Portfolio set shares = shares + {} where userId = {} and symbol = '{}'".format(shares, session['user_id'], symbol))
             mydb.commit()
@@ -517,8 +508,7 @@ def sell():
         
         #Increase Cash
         totalprice = shares * float('%.3f'%symbolDict["Close"])
-        print(totalprice)
-
+        
         crsr.execute("Update Users Set Cash = Cash + {} where Id = {}".format(totalprice, session['user_id']))
         mydb.commit()
         
@@ -531,6 +521,7 @@ def sell():
 
 
 @app.route("/history")
+@login_required
 def history():
     """ Show transaction history """
     

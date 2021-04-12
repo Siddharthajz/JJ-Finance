@@ -29,7 +29,6 @@ soup = BeautifulSoup(r,'html.parser')
 script = soup.find("script",text=re.compile("root.App.main"))
 script = str(script)
 
-
 summary_list = []
 summaries = re.finditer('"is_eligible":',script)
 summary_positions = [summary.start() for summary in summaries]
@@ -39,9 +38,6 @@ for i in summary_positions:
     summary_list.append([codecs.decode(link, 'unicode-escape'),title])
 
 final_list = [i for i in summary_list if ('summary' not in i[0])]
-
-print(final_list)
-
 
 def get_news():
 
